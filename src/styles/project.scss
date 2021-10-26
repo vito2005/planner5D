@@ -1,0 +1,24 @@
+.container {
+  $defaultWidth: 1000px;
+  $defaultHeight: 800px;
+
+  width: $defaultWidth;
+  margin: 0 auto;
+  .project {
+    &__title {
+      margin-bottom: 1rem;
+    }
+
+    &__canvas2d {
+      background-color: rgb(201, 212, 232);
+      width: $defaultWidth;
+      height: $defaultHeight;
+    }
+
+    &__statistics {
+      display: flex;
+      flex-direction: column;
+      margin: 1rem;
+    }
+  }
+}
