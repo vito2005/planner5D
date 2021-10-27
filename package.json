@@ -2,7 +2,7 @@
   "name": "planner5d",
   "version": "1.0.0",
   "description": "test exercise for planner5D",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production"
