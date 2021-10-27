@@ -1,6 +1,7 @@
 const path = require('path')
 const HTMLPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const { ProvidePlugin } = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
@@ -44,6 +45,14 @@ module.exports = {
       },
     }),
     new CleanWebpackPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/assets/favicon.ico'),
+          to: path.resolve(__dirname, 'docs'),
+        },
+      ],
+    }),
     new ProvidePlugin({
       $: 'jquery',
     }),

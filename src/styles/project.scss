@@ -4,6 +4,11 @@
 
   width: $defaultWidth;
   margin: 0 auto;
+
+  h1 {
+    text-align: center;
+  }
+
   .project {
     &__title {
       margin-bottom: 1rem;

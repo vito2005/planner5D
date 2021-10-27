@@ -1,6 +1,6 @@
 import './styles/styles.css'
 
-import projects from '@src/assets/projects.json'
+import projects from '@src/data/projects.json'
 
 const getApiUrl = (projectId) => `./project.html?key=${projectId}`
 

@@ -1,9 +1,8 @@
-import './styles/styles.css'
 import './styles/project.scss'
 
 const projectKey = new URLSearchParams(location.search).get('key')
 
-import(`@src/assets/${projectKey}.json`).then((data) => {
+import(`@src/data/${projectKey}.json`).then((data) => {
   const projectTitle = data.items[0].name
   const projectData = data.items[0].data.items
   const { roomsData, floors, rooms, otherItems } =
