@@ -1,0 +1,18 @@
+.container {
+  padding-top: 2rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+h3.projects__header {
+  margin: 1rem;
+}
+
+li.project {
+  margin: 1rem 0;
+  color: #2c2d2e;
+  font-size: 15px;
+}
+
