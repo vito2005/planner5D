@@ -1,13 +1,16 @@
 import './styles/styles.css'
+import { projects } from '@src/packages/api'
+import { drawList } from '@src/packages/draw'
 
-import projects from '@src/data/projects.json'
+async function makeProjectsList() {
+  const projectsListData = await projects.getProjectsList()
 
-const getApiUrl = (projectId) => `./project.html?key=${projectId}`
+  const projectsList = projectsListData.data.map((p) => ({
+    url: `./project.html?key=${p.hash}`,
+    itemTitle: `${p.hash}, ${p.title}`,
+  }))
 
-const htmlProjects = projects.map((p) =>
-  $(`<li></li>`)
-    .addClass('project')
-    .append($(`<a href="${getApiUrl(p.hash)}">${p.hash}, ${p.title}</a>`))
-)
+  drawList('projects', 'project', projectsList)
+}
 
-$('ul.projects').append(htmlProjects)
+makeProjectsList()
