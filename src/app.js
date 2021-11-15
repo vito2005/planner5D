@@ -1,16 +1,11 @@
-import './styles/styles.css'
-import { projects } from '@src/packages/api'
-import { drawList } from '@src/packages/draw'
+import * as api from './packages/api'
+import * as view from './packages/view'
+import * as parse from './packages/parse'
+import * as log from './packages/log'
 
-async function makeProjectsList() {
-  const projectsListData = await projects.getProjectsList()
-
-  const projectsList = projectsListData.data.map((p) => ({
-    url: `./project.html?key=${p.hash}`,
-    itemTitle: `${p.hash}, ${p.title}`,
-  }))
-
-  drawList('projects', 'project', projectsList)
+export const Planner5D = {
+  api: api,
+  view: view,
+  parse: parse,
+  log: log,
 }
-
-makeProjectsList()

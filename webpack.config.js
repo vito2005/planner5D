@@ -8,7 +8,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: {
-    main: './app.js',
+    index: './projectsList.js',
     project: './project.js',
   },
   output: {
@@ -30,7 +30,7 @@ module.exports = {
       template: './pages/index.html',
       title:
         '3D Home Design Software | House Design Online for Free - Planner 5D',
-      chunks: ['main'],
+      chunks: ['index'],
       minify: {
         collapseWhitespace: true,
       },

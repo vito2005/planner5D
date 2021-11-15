@@ -1,6 +1,6 @@
 import * as projectView from './adapters/project'
 
-function drawList(listClassName, listItemClassName, arrayData) {
+function showList({ listClassName, listItemClassName, arrayData }) {
   const listItems = arrayData.map(({ url, itemTitle }) =>
     $(`<li></li>`)
       .addClass(listItemClassName)
@@ -10,4 +10,4 @@ function drawList(listClassName, listItemClassName, arrayData) {
   $(`ul.${listClassName}`).append(listItems)
 }
 
-export { projectView, drawList }
+export { projectView, showList }

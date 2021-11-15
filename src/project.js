@@ -1,17 +1,29 @@
 import './styles/project.scss'
-import { project } from '@src/packages/api'
-import { getParsedProjectData } from './packages/parse'
-import { projectView } from './packages/draw'
+import { Planner5D } from './app'
+import { Project } from './domain/project'
 
 async function makeProject() {
   const projectKey = new URLSearchParams(location.search).get('key')
-  const data = await project.getProjectData(projectKey)
+  const data = await Planner5D.api.project.getProjectData(projectKey)
 
-  const { title, roomsData, floors, rooms, otherItems } =
-    getParsedProjectData(data)
+  const { name, hash, floorsCount, roomsCount, otherItemsCount, rooms } =
+    Planner5D.parse.getParsedProjectData(data)
 
-  projectView.drawProjectStats({ title, floors, rooms, otherItems })
-  projectView.drawRooms(roomsData)
+  const project = new Project({
+    id: hash,
+    name,
+    floorsCount,
+    roomsCount,
+    otherItemsCount,
+    rooms,
+  })
+
+  Planner5D.view.projectView.showProjectStats({
+    title: project.name,
+    ...project.statistics,
+  })
+
+  Planner5D.view.projectView.drawRooms(project.rooms)
 }
 
 makeProject()
