@@ -1,10 +1,11 @@
 import * as graphicTool from '@src/packages/view/graphicTool'
 
 export function drawRooms(rooms) {
+  const ctx = graphicTool.getContext()
+
   rooms.forEach((room) => {
     const wallsPath = room.getWallsPath()
-
-    graphicTool.drawPath(wallsPath)
+    graphicTool.drawPath(ctx, wallsPath)
   })
 }
 

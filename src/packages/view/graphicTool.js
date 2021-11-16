@@ -1,6 +1,4 @@
-let ctx
-
-export function drawPath(points) {
+export function drawPath(ctx, points) {
   const startPoint = points[0]
 
   if (!ctx) {
@@ -19,7 +17,7 @@ export function drawPath(points) {
   ctx.stroke()
 }
 
-function initContext() {
+export function getContext() {
   const canvas = $('canvas')[0]
   canvas.width = 2000
   canvas.height = 2000
