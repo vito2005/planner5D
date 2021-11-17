@@ -1,4 +1,6 @@
-import { Room, Wall, Point } from '../../domain/project.js'
+import { Room } from '../../domain/Room.js'
+import { Wall } from '../../domain/Wall.js'
+import { Point } from '../../domain/Point.js'
 
 export function getParsedProjectsList(projectsListData) {
   return projectsListData.data.map((p) => ({

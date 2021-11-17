@@ -1,6 +1,6 @@
 import './styles/project.scss'
 import { Planner5D } from './app'
-import { Project } from './domain/project'
+import { Project } from './domain/Project'
 
 async function makeProject() {
   const projectKey = new URLSearchParams(location.search).get('key')

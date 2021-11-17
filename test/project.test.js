@@ -2,7 +2,7 @@ import { readFileSync } from 'fs'
 import { join } from 'path'
 import { strictEqual, deepStrictEqual } from 'assert'
 import { getParsedProjectData } from '../src/packages/parse/index.js'
-import { Project } from '../src/domain/project.js'
+import { Project } from '../src/domain/Project.js'
 
 const mockProject = JSON.parse(
   readFileSync(
